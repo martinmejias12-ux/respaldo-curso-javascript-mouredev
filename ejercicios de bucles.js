@@ -7,7 +7,7 @@ console.log();
 console.log('<----------------------------------------->');
 console.log('<----1. Crea un bucle que imprima los números del 1 al 20 ----->');
 
-for (let index = 1; index < 11; index++) {
+for (let index = 1; index < 21; index++) {
     console.log();
     console.log(`imprimiendo el: ${index}`);
     console.log();
@@ -19,7 +19,7 @@ console.log('<----AHORA USANDO EL WHILE ----->');
 console.log();
 
 let i=1;
-while (i<11) {
+while (i<21) {
     console.log();
     console.log(`imprimiendo el: ${i}`);
     console.log();
@@ -36,6 +36,7 @@ console.log('<----2. Crea un bucle que sume todos los números del 1 al 100 y mu
 
 let j=1;
 let suma=0;
+
 while (j<101){
     suma = suma+j;
     j++
@@ -169,8 +170,6 @@ console.log();
 console.log(`el resultado de la multiplicacion del arreglo es: ${resultadoMultiplicacion}`);
 console.log();
 
-
-
 // 7. Escribe un bucle que imprima la tabla de multiplicar del 5
 
 console.log();
@@ -208,29 +207,51 @@ for (let q = cadenaTexto2.length - 1; q >= 0; q--){
 
 }
 
-
-
-/*
 // 9. Usa un bucle para generar los primeros 10 números de la secuencia de Fibonacci
 
 console.log();
 console.log('<----------------------------------------->');
-console.log('<---- ----->');
+console.log('<----9. Usa un bucle para generar los primeros 10 números de la secuencia de Fibonacci----->');
 
+let secuencia = [];
+
+secuencia[0] = 0;
+secuencia[1] = 1;
+
+for (let n = 2; n < 10; n++) {
+
+    let fibonacci = secuencia[n-1]+secuencia[n-2];
+    secuencia.push(fibonacci);
+
+}
 
 console.log();
+console.log(secuencia);
 console.log();
-console.log();
+
 
 // 10. Dado un array de números, usa un bucle para crear un nuevo array que contenga solo los números mayores a 10
 
 console.log();
 console.log('<----------------------------------------->');
-console.log('<---- ----->');
+console.log('<----10. Dado un array de números, usa un bucle para crear un nuevo array que contenga solo los números mayores a 10----->');
 
+let arrayNumeros = [25,14,2,3,7,89,15,24,78];
+
+let nuevoArray = [];
+
+let indice = 0;
+
+while (indice < arrayNumeros.length){
+
+    if (arrayNumeros[indice] > 10){
+
+        nuevoArray.push(arrayNumeros[indice]);
+    }
+    indice++
+}
 
 console.log();
-console.log();
+console.log(nuevoArray);
 console.log();
 
-*/
