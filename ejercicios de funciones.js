@@ -99,9 +99,9 @@ console.log('<----4. Crea una función que reciba un array de strings y devuelva
 
 let arregloEvaluar2 = ['paracutirimicuaro','orangutan','casemiro'];
 
-let arregloConMayusculas = [];
-
 const convertirMayuscula = (arregloEvaluar2)=>{
+
+    let arregloConMayusculas = [];
 
     for (let i = 0; i<arregloEvaluar2.length;i++){
 
@@ -110,14 +110,13 @@ const convertirMayuscula = (arregloEvaluar2)=>{
         let pasarMayuscula = valorArreglo.toUpperCase();
 
         arregloConMayusculas.push(pasarMayuscula);
-
     }
+
+    return arregloConMayusculas;
 };
 
-convertirMayuscula(arregloEvaluar2);
-
 console.log();
-console.log(arregloConMayusculas);
+console.log(convertirMayuscula(arregloEvaluar2));
 console.log();
 
 // 5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario
@@ -166,9 +165,10 @@ console.log('<----------------------------------------->');
 console.log('<----6. Crea una función que reciba dos arrays y devuelva un nuevo array que contenga los elementos comunes entre ambos----->');
 
 let cadena1 = ['manzana', 'pera','tomate','zanahoria'];
-let cadena2 = ['pera', 'naranja','zanahoria','limones', 'cebolla','tomate','cebollin'];
+let cadena2 = ['pera', 'naranja','zanahoria','limones', 'cebolla','tomate','cebollín'];
 
-
+/*
+// aunque este programa corrió y ejecuto lo solicitado no es eficiente y podría durar tiempo en la ejecución cuando sean arreglos muy grandes
 const arregloElementosComunes = (cadena1, cadena2)=>{
 
     let elementosComunes = [];
@@ -186,9 +186,21 @@ const arregloElementosComunes = (cadena1, cadena2)=>{
 
     return elementosComunes;
 };
+*/
 
+// utilizaremos esta forma que es mucho mas eficiente para hallar elementos comunes
 
-/*elementosComunes=arregloElementosComunes(cadena1,cadena2);*/
+const arregloElementosComunes = (cadena1, cadena2)=>{
+
+    // convertimos una de las cadenas en un Set
+    let cadena1Set = new Set(cadena1);
+
+    // usamos un filtro para ubicar los elementos comunes
+
+    let elementosComunes = cadena2.filter(elemento => cadena1Set.has(elemento));
+
+    return elementosComunes;
+};
 
 console.log();
 console.log('los elementos comunes en la lista son: ',arregloElementosComunes(cadena1,cadena2));
@@ -236,10 +248,15 @@ console.log('<----8. Crea una función que reciba un array de números y devuelv
 
 let arregloNumeros2 = [2,5,7,9,10,12,15];
 
-const nuevoArreglo = arregloNumeros2.map(numero => numero**2);
+const elevarAlCuadrado = ()=>{
+
+    const nuevoArreglo = arregloNumeros2.map(numero => numero**2);
+
+    return nuevoArreglo;
+}
 
 console.log();
-console.log(nuevoArreglo);
+console.log(elevarAlCuadrado(arregloNumeros2));
 console.log();
 
 // 9. Crea una función que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso
@@ -247,6 +264,9 @@ console.log();
 console.log();
 console.log('<----------------------------------------->');
 console.log('<----9. Crea una función que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso----->');
+
+/*
+// se deja fuera de servicio esta parte del programa solo se esta utilizando como practica de algo adicional
 
 let cadenaTexto = 'Hola Mundo';
 
@@ -269,6 +289,7 @@ console.log('cadena invertida: ', invertirCaracterCadenaTexto(cadenaTexto));
 console.log();
 
 console.log('<----el mismo ejercicio pero ahora invirtiendo las palabras----->');
+*/
 
 let cadenaAInvertir = 'Hola mundo';
 
